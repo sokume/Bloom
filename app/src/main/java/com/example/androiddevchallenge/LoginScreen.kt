@@ -31,8 +31,11 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
@@ -190,11 +193,25 @@ fun LoginText(modifier: Modifier) {
         modifier = modifier,
         contentAlignment = Alignment.BottomCenter
     ) {
-
-        ClickableText(
+        // ClickableText should be used, but TextAlign.Center cannot be used, so Text is used
+        Text(
             text = annotatedLinkString,
+            modifier = Modifier,
+            color = Color.Unspecified,
+            fontSize = TextUnit.Unspecified,
+            fontStyle = null,
+            fontWeight = null,
+            fontFamily = null,
+            letterSpacing = TextUnit.Unspecified,
+            textDecoration = null,
+            textAlign = TextAlign.Center,
+            lineHeight = TextUnit.Unspecified,
+            overflow = TextOverflow.Clip,
+            softWrap = true,
+            maxLines = 2,
+            inlineContent = emptyMap(),
+            onTextLayout = {},
             style = MaterialTheme.typography.body2,
-            onClick = {}
         )
     }
 }
