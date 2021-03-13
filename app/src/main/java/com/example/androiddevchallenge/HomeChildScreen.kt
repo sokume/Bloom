@@ -221,7 +221,6 @@ fun VerticalImage(modifier: Modifier) {
                             )
                         )
                     }
-
                 }
             }
         }
@@ -290,8 +289,7 @@ fun HorizontalImage(modifier: Modifier) {
             Card(
                 modifier = Modifier.size(136.dp),
             ) {
-                Column(
-                ) {
+                Column {
                     Image(
                         painter = plant.res,
                         contentDescription = plant.description,
@@ -308,7 +306,6 @@ fun HorizontalImage(modifier: Modifier) {
                             .fillMaxWidth()
                             .height(40.dp)
                             .padding(top = 8.dp, start = 16.dp, end = 16.dp),
-
                         )
                 }
             }
@@ -336,9 +333,7 @@ fun SearchInputText(modifier: Modifier) {
 
     Box(
         modifier = modifier,
-    )
-    {
-
+    ) {
         TextField(
             value = searchValue.value,
             onValueChange = {

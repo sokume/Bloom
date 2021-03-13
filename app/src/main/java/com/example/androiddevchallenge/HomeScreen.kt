@@ -80,7 +80,6 @@ fun HomeScreenMake() {
         Screen.NaviFavorites,
         Screen.NaviProfile,
         Screen.NaviCart,
-
         )
 
     val navController = rememberNavController()
