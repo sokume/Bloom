@@ -19,4 +19,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="primary">#FFFFF1F1</color>
+    <color name="background">#FFFFFFFF</color>
+
 </resources>

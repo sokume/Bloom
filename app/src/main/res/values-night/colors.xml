@@ -12,4 +12,6 @@
 <resources>
 
     <color name="primary">#FF2D3B2D</color>
+    <color name="background">#FF232323</color>
+
 </resources>

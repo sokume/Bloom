@@ -4,15 +4,12 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.ButtonElevation
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
@@ -28,7 +25,22 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.androiddevchallenge.ui.theme.MyTheme
-import com.example.androiddevchallenge.ui.theme.typography
+
+@Preview("Light Theme",widthDp = 360, heightDp = 640)
+@Composable
+fun WelcomeScreenLightPreview() {
+    MyTheme {
+        WelcomeScreenMake()
+    }
+}
+
+@Preview("Dark Theme", widthDp = 360, heightDp = 640)
+@Composable
+fun WelcomeScreenDarkPreview() {
+    MyTheme(darkTheme = true) {
+        WelcomeScreenMake()
+    }
+}
 
 @Composable
 fun WelcomeScreen(navigate: NavHostController) {
@@ -37,24 +49,23 @@ fun WelcomeScreen(navigate: NavHostController) {
     val activity = (context as MainActivity)
     activity.window.statusBarColor = context.resources.getColor(R.color.primary, context.theme)
 
-    Screen()
+    WelcomeScreenMake()
 }
 
 @Composable
-fun Screen() {
+fun WelcomeScreenMake() {
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colors.primary),
     ) {
         BottomBackground()
-        Items()
-        Text(text = "LoginScreen")
+        WelcomeItems()
     }
 }
 
 @Composable
-fun Items() {
+fun WelcomeItems() {
 
     Column(
         modifier = Modifier
@@ -92,7 +103,6 @@ fun Items() {
 
             }
         )
-
     }
 }
 
@@ -202,20 +212,4 @@ fun BottomBackground() {
         modifier = Modifier.fillMaxSize(),
         contentScale = ContentScale.Crop
     )
-}
-
-@Preview(widthDp = 360, heightDp = 640)
-@Composable
-fun WelcomeScreenLightPreview() {
-    MyTheme {
-        Screen()
-    }
-}
-
-@Preview("Dark Theme", widthDp = 360, heightDp = 640)
-@Composable
-fun WelcomeScreenDarkPreview() {
-    MyTheme {
-        Screen()
-    }
 }
