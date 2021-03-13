@@ -4,10 +4,13 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
@@ -26,7 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
-@Preview("Light Theme",widthDp = 360, heightDp = 640)
+@Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun WelcomeScreenLightPreview() {
     MyTheme {
@@ -69,7 +72,8 @@ fun WelcomeItems() {
 
     Column(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxWidth()
+            .fillMaxHeight()
     ) {
         LeafImage(
             Modifier
@@ -136,7 +140,6 @@ fun LoginButton(
     }
 }
 
-
 @Composable
 fun CreateAccountButton(
     modifier: Modifier,
@@ -197,9 +200,13 @@ fun LogoImage(modifier: Modifier) {
 fun LeafImage(modifier: Modifier) {
     val image: Painter = painterResource(id = R.drawable.ic_welcome_illos)
     Image(
-        image,
-        "background_image",
+        painter = image,
+        contentDescription = "background_image",
         modifier = modifier
+            .height(280.dp)
+            .width(310.dp),
+        alignment = Alignment.TopStart,
+        contentScale = ContentScale.None,
     )
 }
 
@@ -210,6 +217,6 @@ fun BottomBackground() {
         image,
         "background_image",
         modifier = Modifier.fillMaxSize(),
-        contentScale = ContentScale.Crop
+        contentScale = ContentScale.FillWidth
     )
 }
