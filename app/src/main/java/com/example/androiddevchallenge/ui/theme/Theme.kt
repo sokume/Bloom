@@ -29,9 +29,9 @@ private val DarkColorPalette = darkColors(
     background = dark_background,
     surface = dark_surface,
     onPrimary = dark_on_primary,
-    onSecondary = dark_secondary,
-    onBackground = dark_background,
-    onSurface = dark_surface,
+    onSecondary = dark_on_secondary,
+    onBackground = dark_on_background,
+    onSurface = dark_on_surface,
 
 )
 

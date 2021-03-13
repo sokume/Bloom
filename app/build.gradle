@@ -77,6 +77,7 @@ dependencies {
 
     // Navigation
     implementation "androidx.navigation:navigation-compose:1.0.0-alpha09"
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.4.31'
 
     testImplementation 'junit:junit:4.13.2'
 
