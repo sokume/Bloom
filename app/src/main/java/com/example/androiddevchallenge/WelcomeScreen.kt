@@ -67,9 +67,11 @@ fun WelcomeScreen(navController: NavHostController) {
     val activity = (context as MainActivity)
     activity.window.statusBarColor = context.resources.getColor(R.color.primary, context.theme)
 
-    WelcomeScreenMake(onClick = {
-        navController.navigate("log_in")
-    })
+    WelcomeScreenMake(
+        onClick = {
+            navController.navigate("log_in")
+        }
+    )
 }
 
 @Composable
