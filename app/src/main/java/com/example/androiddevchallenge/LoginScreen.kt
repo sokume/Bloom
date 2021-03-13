@@ -186,21 +186,27 @@ fun LoginText(modifier: Modifier) {
             style = SpanStyle(
                 color = MaterialTheme.colors.onPrimary,
                 fontSize = 12.sp
-            ), start = 0, end = str.length
+            ),
+            start = 0,
+            end = str.length
         )
         addStyle(
             style = SpanStyle(
                 color = MaterialTheme.colors.onPrimary,
                 fontSize = 12.sp,
                 textDecoration = TextDecoration.Underline
-            ), start = startIndex1, end = endIndex1
+            ),
+            start = startIndex1,
+            end = endIndex1
         )
         addStyle(
             style = SpanStyle(
                 color = MaterialTheme.colors.onPrimary,
                 fontSize = 12.sp,
                 textDecoration = TextDecoration.Underline
-            ), start = startIndex2, end = endIndex2
+            ),
+            start = startIndex2,
+            end = endIndex2
         )
     }
 
@@ -237,10 +243,7 @@ fun PasswordInputText(modifier: Modifier) {
 
     Box(
         modifier = modifier,
-        // border = Border(2.dp, Color.Black)
-    )
-    {
-
+    ) {
         TextField(
             value = passwordValue.value,
             onValueChange = {
@@ -280,10 +283,7 @@ fun EmailAddressInputText(modifier: Modifier) {
 
     Box(
         modifier = modifier,
-        // border = Border(2.dp, Color.Black)
-    )
-    {
-
+    ) {
         TextField(
             value = emailValue.value,
             onValueChange = {
