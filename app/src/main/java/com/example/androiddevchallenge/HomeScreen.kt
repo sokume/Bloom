@@ -15,25 +15,18 @@
  */
 package com.example.androiddevchallenge
 
-import androidx.annotation.StringRes
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
@@ -60,7 +53,6 @@ fun HomeScreenDarkPreview() {
         HomeScreenMake()
     }
 }
-
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
@@ -89,7 +81,7 @@ fun HomeScreenMake() {
         Screen.NaviProfile,
         Screen.NaviCart,
 
-    )
+        )
 
     val navController = rememberNavController()
     Scaffold(
@@ -99,7 +91,7 @@ fun HomeScreenMake() {
                 val currentRoute = navBackStackEntry?.arguments?.getString(KEY_ROUTE)
                 items.forEach { screen ->
                     BottomNavigationItem(
-                        icon = { Icon(screen.resource,screen.route) },
+                        icon = { Icon(screen.resource, screen.route) },
                         label = { Text(screen.route) },
                         selected = currentRoute == screen.route,
                         onClick = {

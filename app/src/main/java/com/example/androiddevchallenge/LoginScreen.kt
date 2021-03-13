@@ -118,7 +118,8 @@ fun LoginItems(onClick: () -> Unit) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 16.dp),
-            onClick = onClick)
+            onClick = onClick
+        )
     }
 }
 

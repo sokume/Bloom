@@ -15,11 +15,7 @@
  */
 package com.example.androiddevchallenge
 
-import android.content.res.Resources
-import android.graphics.Color
 import android.os.Bundle
-import android.view.View
-import android.view.WindowManager
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
@@ -27,8 +23,6 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavHostController
-import androidx.navigation.activity
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -43,7 +37,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
 
     @Composable
     fun AppNavigator() {
