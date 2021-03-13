@@ -19,19 +19,16 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
-import androidx.compose.material.TextFieldColors
 import androidx.compose.material.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -80,9 +77,11 @@ fun LoginScreen(navController: NavHostController) {
     val activity = (context as MainActivity)
     activity.window.statusBarColor = context.resources.getColor(R.color.background, context.theme)
 
-    LoginScreenMake(onClick = {
-        navController.navigate("home")
-    })
+    LoginScreenMake(
+        onClick = {
+            navController.navigate("home")
+        }
+    )
 }
 
 @Composable

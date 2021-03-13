@@ -306,7 +306,7 @@ fun HorizontalImage(modifier: Modifier) {
                             .fillMaxWidth()
                             .height(40.dp)
                             .padding(top = 8.dp, start = 16.dp, end = 16.dp),
-                        )
+                    )
                 }
             }
         }
