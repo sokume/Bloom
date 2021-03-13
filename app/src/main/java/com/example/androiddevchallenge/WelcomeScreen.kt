@@ -27,13 +27,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.navigate
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun WelcomeScreenLightPreview() {
     MyTheme {
-        WelcomeScreenMake()
+        WelcomeScreenMake(onClick = {})
     }
 }
 
@@ -41,34 +42,36 @@ fun WelcomeScreenLightPreview() {
 @Composable
 fun WelcomeScreenDarkPreview() {
     MyTheme(darkTheme = true) {
-        WelcomeScreenMake()
+        WelcomeScreenMake(onClick = {})
     }
 }
 
 @Composable
-fun WelcomeScreen(navigate: NavHostController) {
+fun WelcomeScreen(navController: NavHostController) {
     // Edit Color Status Bar
     val context = LocalContext.current
     val activity = (context as MainActivity)
     activity.window.statusBarColor = context.resources.getColor(R.color.primary, context.theme)
 
-    WelcomeScreenMake()
+    WelcomeScreenMake(onClick = {
+        navController.navigate("log_in")
+    })
 }
 
 @Composable
-fun WelcomeScreenMake() {
+fun WelcomeScreenMake(onClick: () -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colors.primary),
     ) {
         BottomBackground()
-        WelcomeItems()
+        WelcomeItems(onClick = onClick)
     }
 }
 
 @Composable
-fun WelcomeItems() {
+fun WelcomeItems(onClick: () -> Unit) {
 
     Column(
         modifier = Modifier
@@ -94,18 +97,14 @@ fun WelcomeItems() {
                 .padding(top = 40.dp)
                 .height(48.dp)
                 .fillMaxWidth(),
-            onClick = {
-
-            }
+            onClick = onClick
         )
         LoginButton(
             Modifier
                 .padding(top = 8.dp)
                 .height(48.dp)
                 .fillMaxWidth(),
-            onClick = {
-
-            }
+            onClick = {}
         )
     }
 }

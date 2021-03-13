@@ -36,13 +36,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.navigate
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun LoginScreenLightPreview() {
     MyTheme {
-        LoginScreenMake()
+        LoginScreenMake(onClick = {})
     }
 }
 
@@ -50,35 +51,35 @@ fun LoginScreenLightPreview() {
 @Composable
 fun LoginScreenDarkPreview() {
     MyTheme(darkTheme = true) {
-        LoginScreenMake()
+        LoginScreenMake(onClick = {})
     }
 }
 
 @Composable
 fun LoginScreen(navController: NavHostController) {
-    Text(text = "LoginScreen")
-
     // Edit Color Status Bar
     val context = LocalContext.current
     val activity = (context as MainActivity)
     activity.window.statusBarColor = context.resources.getColor(R.color.background, context.theme)
 
-    LoginScreenMake()
+    LoginScreenMake(onClick = {
+        navController.navigate("home")
+    })
 }
 
 @Composable
-fun LoginScreenMake() {
+fun LoginScreenMake(onClick: () -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colors.background),
     ) {
-        LoginItems()
+        LoginItems(onClick = onClick)
     }
 }
 
 @Composable
-fun LoginItems() {
+fun LoginItems(onClick: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -114,7 +115,7 @@ fun LoginItems() {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 16.dp),
-            onClick = { /*TODO*/ })
+            onClick = onClick)
     }
 }
 
@@ -142,7 +143,7 @@ fun LoginAccountButton(
 
         ) {
             Text(
-                text = "Create account",
+                text = "Log in",
                 style = MaterialTheme.typography.button,
                 color = MaterialTheme.colors.onSecondary,
             )

@@ -190,7 +190,7 @@ fun VerticalImage(modifier: Modifier) {
                         modifier = Modifier
                             .height(64.dp)
                             .fillMaxWidth()
-                            .padding(8.dp),
+                            .padding(start = 8.dp,top = 8.dp,bottom = 8.dp),
                         contentAlignment = Alignment.BottomEnd
                     ) {
 
@@ -204,7 +204,7 @@ fun VerticalImage(modifier: Modifier) {
                             modifier = Modifier
                                 .padding(bottom = 16.dp),
                             colors = CheckboxDefaults.colors(
-                                checkmarkColor = MaterialTheme.colors.onSurface
+                                checkmarkColor = MaterialTheme.colors.primary
                             )
                         )
                     }
@@ -239,7 +239,9 @@ fun DisplayMessageText(modifier: Modifier) {
         ) {
             IconButton(
                 modifier = Modifier
-                    .size(48.dp),
+                    .size(24.dp)
+                    .padding(bottom = 4.dp),
+
                 onClick = {}
             ) {
                 Icon(
@@ -317,7 +319,6 @@ fun SearchInputText(modifier: Modifier) {
 
     Box(
         modifier = modifier,
-        // border = Border(2.dp, Color.Black)
     )
     {
 
